@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Message Form</title>
+  <!-- Tailwind CSS + DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen flex items-center justify-center">
+
+  <div class="card w-full max-w-md shadow-xl bg-white p-6">
+    <h2 class="text-2xl font-bold text-center mb-6 text-blue-700">Send Welcome Message</h2>
+
+    <form id="welcomeForm" class="space-y-4">
+      <!-- Name -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Name</span>
+        </label>
+        <input type="text" placeholder="John Doe" name="name" class="input input-bordered" required />
+      </div>
+
+      <!-- Room Number -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Room Number</span>
+        </label>
+        <input type="text" placeholder="101" name="room" class="input input-bordered" required />
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">WhatsApp Number</span>
+        </label>
+        <input type="tel" placeholder="+358 40 1234567" name="whatsapp" class="input input-bordered" pattern="^\+?\d{7,15}$" required />
+        <label class="label">
+          <span class="label-text-alt text-gray-500">Include country code, e.g., +358</span>
+        </label>
+      </div>
+
+      <!-- Email -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Email</span>
+        </label>
+        <input type="email" placeholder="example@mail.com" name="email" class="input input-bordered" required />
+      </div>
+
+      <!-- Language -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Preferred Language</span>
+        </label>
+        <select name="language" class="select select-bordered" required>
+          <option value="">Select language</option>
+          <option value="en">English</option>
+          <option value="fi">Finnish</option>
+          <option value="sv">Swedish</option>
+          <option value="sv">Russian</option>
+          <option value="sv">French</option>
+          <option value="sv">Chinese</option>
+          <option value="sv">Spanish</option>
+          <option value="sv">German</option>
+        </select>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-control mt-6">
+        <button type="submit" class="btn btn-primary w-full">Send Welcome Message</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("welcomeForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Welcome message sent successfully!");
+      // Here you can add your backend/WhatsApp API call
+    });
+  </script>
+
+</body>
+</html>
